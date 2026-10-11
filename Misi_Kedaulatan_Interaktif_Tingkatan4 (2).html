@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misi Kedaulatan: Cabaran Sejarah Tingkatan 4</title>
+<style>
+:root{--navy:#14213d;--blue:#2357a5;--gold:#ffc857;--cream:#fff9ec;--green:#1b8a63;--red:#c43d4b}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at top right,#d9eaff,transparent 35%),linear-gradient(135deg,#f7f9ff,#fff6e5);color:var(--navy);min-height:100vh}
+header{padding:18px 20px;background:var(--navy);color:white;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:900;letter-spacing:.4px}.brand span{color:var(--gold)}.topnote{font-size:.88rem;opacity:.85}
+main{max-width:920px;margin:24px auto;padding:0 15px 35px}.panel{background:#ffffffed;border:1px solid #dce5f3;border-radius:24px;padding:clamp(18px,4vw,34px);box-shadow:0 15px 40px #172c5012}
+.kicker{text-transform:uppercase;font-size:.78rem;letter-spacing:1.5px;font-weight:900;color:var(--blue)}
+h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1.05;margin:10px 0 14px}h2{margin:8px 0 12px;font-size:clamp(1.35rem,4vw,2rem)}
+p{line-height:1.65}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:center}
+.hero-art{min-height:220px;border-radius:22px;background:linear-gradient(145deg,#2357a5,#14213d);display:flex;align-items:center;justify-content:center;font-size:clamp(4rem,12vw,7rem);position:relative;overflow:hidden}
+.hero-art:after{content:"";position:absolute;width:180px;height:180px;border:2px solid #ffc85780;border-radius:50%;right:-35px;bottom:-65px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.chip{background:#edf3ff;color:#234c8b;border-radius:99px;padding:7px 11px;font-size:.83rem;font-weight:800}
+button{border:0;border-radius:14px;padding:13px 18px;font-size:1rem;font-weight:850;cursor:pointer;transition:transform .15s,filter .15s}button:hover{filter:brightness(.97);transform:translateY(-1px)}button:focus-visible{outline:3px solid #ffb703;outline-offset:3px}
+.primary{background:var(--gold);color:#222b3a;box-shadow:0 5px 0 #d99d22}.secondary{background:#eaf0fa;color:#1b3c71}.smallbtn{padding:9px 12px;font-size:.9rem}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.hide{display:none!important}
+.gamehead{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.stat{background:#f1f5fc;padding:8px 12px;border-radius:12px;font-weight:800;font-size:.9rem}
+.progress{height:10px;background:#e8edf6;border-radius:99px;overflow:hidden;margin:15px 0 24px}.bar{height:100%;width:0;background:linear-gradient(90deg,#2357a5,#48b68a);transition:width .3s}
+.question{font-size:clamp(1.15rem,3.5vw,1.55rem);font-weight:850;line-height:1.4;margin:12px 0 18px}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.answer{background:#fff;border:2px solid #dbe4f2;text-align:left;min-height:68px;display:flex;gap:12px;align-items:center;color:#24324b;box-shadow:none}.answer .letter{background:#edf2fb;border-radius:10px;min-width:34px;height:34px;display:grid;place-items:center;font-weight:900}.answer.correct{border-color:var(--green);background:#eafaf2}.answer.wrong{border-color:var(--red);background:#fff0f1}.answer:disabled{cursor:default;transform:none}
+.feedback{margin-top:16px;border-radius:14px;padding:13px 15px;font-weight:750;line-height:1.5}.feedback.good{background:#e5f8ee;color:#176546}.feedback.bad{background:#fff0f1;color:#a52b39}
+.explain{font-weight:500;font-size:.94rem;margin-top:5px}.bottomrow{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}
+.resulticon{font-size:4rem}.resultscore{font-size:clamp(2.5rem,8vw,4rem);font-weight:950;color:var(--blue);line-height:1}
+.certificate{margin-top:20px;padding:clamp(20px,5vw,42px);background:#fffdf5;border:9px double #c99a25;outline:1px solid #f2d77f;outline-offset:-17px;text-align:center;position:relative}
+.cert-title{font-family:Georgia,serif;color:#173665;font-size:clamp(1.7rem,5vw,2.8rem);font-weight:bold}.cert-name{border-bottom:2px solid #bd9a45;display:inline-block;min-width:min(90%,320px);padding:10px 8px;margin:10px 0;font-size:1.4rem;font-weight:800;color:#173665}
+input{width:100%;max-width:430px;padding:13px 14px;border:2px solid #d8e1ef;border-radius:12px;font:inherit;margin:8px 0}.note{font-size:.86rem;color:#586780}.reviewitem{border-bottom:1px solid #e4eaf3;padding:12px 0}.reviewitem:last-child{border:0}.reviewitem b{display:block;margin-bottom:4px}.reviewitem .ans{font-size:.92rem;color:#52617a}
+footer{text-align:center;padding:15px;color:#66738a;font-size:.82rem}
+@media(max-width:650px){.hero{grid-template-columns:1fr}.hero-art{min-height:140px;order:-1}.answers{grid-template-columns:1fr}.answer{min-height:58px}header{padding:14px}.panel{border-radius:19px}}
+@media print{body{background:white}.no-print,header,footer,.noncert{display:none!important}main{max-width:none;margin:0;padding:0}.panel{border:0;box-shadow:none;padding:0}.certificate{margin:0;min-height:95vh;display:flex;flex-direction:column;justify-content:center;break-inside:avoid}.cert-name{min-width:360px}}
+</style>
+</head>
+<body>
+<header><div class="brand">🏛️ SEJARAH <span>LEVEL UP!</span></div><div class="topnote">TINGKATAN 4 · MISI KEDAULATAN</div></header>
+<main>
+<section id="start" class="panel">
+ <div class="hero">
+  <div><div class="kicker">🎮 Cabaran interaktif</div><h1>MISI<br><span style="color:#2357a5">KEDAULATAN</span></h1>
+   <p>Jadilah ejen sejarah! Jawab soalan tentang <b>kedaulatan tradisional, moden, undang-undang dan antarabangsa</b>. Kumpul mata, uji minda dan raih sijil pencapaian anda.</p>
+   <div class="chips"><span class="chip">⚡ 10 soalan</span><span class="chip">🔊 Bunyi betul & salah</span><span class="chip">🏆 Sijil digital</span></div>
+   <label for="studentName"><b>Nama untuk sijil</b></label><br><input id="studentName" maxlength="70" placeholder="Masukkan nama anda (pilihan)">
+   <div class="controls"><button class="primary" id="startBtn">MULA MISI 🚀</button><button class="secondary" id="soundToggle" aria-pressed="true">🔊 Bunyi: ON</button></div>
+   <p class="note">Tip: Baca setiap soalan dengan teliti. Anda akan mendapat maklum balas serta penerangan selepas memilih jawapan.</p>
+  </div>
+  <div class="hero-art" aria-label="Lencana misi">🏅</div>
+ </div>
+</section>
+<section id="quiz" class="panel hide">
+ <div class="gamehead"><div class="kicker">🧠 Sedang beraksi</div><div><span class="stat" id="counter">Soalan 1/10</span> <span class="stat" id="score">⭐ 0 mata</span></div></div>
+ <div class="progress"><div id="bar" class="bar"></div></div>
+ <div id="category" class="kicker">KATEGORI</div><div id="question" class="question"></div>
+ <div id="answers" class="answers"></div><div id="feedback" class="feedback hide" role="status" aria-live="polite"></div>
+ <div class="bottomrow"><span class="note" id="hint">Pilih satu jawapan.</span><button id="nextBtn" class="primary hide">Soalan seterusnya ➜</button></div>
+</section>
+<section id="results" class="panel hide">
+ <div class="noncert"><div class="resulticon" id="resultIcon">🏆</div><div class="kicker">Misi selesai!</div><h2 id="resultTitle">Tahniah, ejen sejarah!</h2><div class="resultscore" id="finalScore">0/100</div><p id="resultMessage"></p>
+ <div class="controls"><button class="primary" id="certBtn">Papar sijil 🎓</button><button class="secondary" id="reviewBtn">Semak jawapan</button><button class="secondary" id="retryBtn">Main semula ↻</button></div>
+ <div id="review" class="hide" style="margin-top:20px"><h2>📚 Semakan jawapan</h2><div id="reviewList"></div></div></div>
+ <div id="certificate" class="certificate hide">
+  <div style="font-size:3rem">🏛️ 🏅 🏛️</div><div class="kicker">SIJIL PENCAPAIAN DIGITAL</div>
+  <div class="cert-title">ANUGERAH EJEN KEDAULATAN</div>
+  <p>Dengan ini diperakui bahawa</p><div class="cert-name" id="certName">Ejen Sejarah</div>
+  <p>telah berjaya menamatkan <b>Misi Kedaulatan</b><br>Sejarah Tingkatan 4 dengan pencapaian</p>
+  <div style="font-size:2.3rem;font-weight:950;color:#2357a5" id="certScore">0/100</div>
+  <p id="certRank" style="font-weight:850;color:#9b7012"></p>
+  <p style="margin-top:25px">Teruskan meneroka sejarah dan mempertahankan ilmu!</p>
+  <div style="display:flex;justify-content:space-around;gap:15px;flex-wrap:wrap;margin-top:25px"><div>____________________<br><small>Pengiktirafan digital</small></div><div id="certDate">11 Oktober 2026</div></div>
+  <p class="note">Sijil dijana secara digital berdasarkan skor permainan.</p>
+ </div>
+ <div class="controls no-print hide" id="certControls"><button class="primary" id="printBtn">🖨️ Cetak / Simpan PDF</button><button class="secondary" id="backBtn">Kembali ke keputusan</button></div>
+</section>
+</main><footer>Dibina untuk pembelajaran Sejarah Tingkatan 4 · Misi Kedaulatan</footer>
+<script>
+const questions=[
+{c:"KEKALAN TRADISIONAL",q:"Apakah maksud kedaulatan tradisional?",a:["Kuasa mutlak pemerintah untuk menguasai urusan pemerintahan","Kuasa yang diberikan oleh Pertubuhan Bangsa-Bangsa Bersatu","Kuasa rakyat memilih semua hakim","Kuasa ekonomi syarikat antarabangsa"],k:0,e:"Kedaulatan tradisional merujuk sistem pemerintahan berkuasa mutlak yang menguasai sepenuhnya urusan negara."},
+{c:"KEKALAN TRADISIONAL",q:"Dalam konteks Kesultanan Melayu, siapakah pemerintah yang mempunyai kuasa tertinggi?",a:["Ketua kampung","Raja atau sultan","Duta asing","Ketua pertubuhan antarabangsa"],k:1,e:"Raja merupakan pemerintah yang mempunyai kuasa tertinggi dan kedaulatannya diperkukuh oleh kesetiaan rakyat."},
+{c:"KEKALAN MODEN",q:"Kedaulatan moden dikaitkan dengan kemunculan negara bangsa selepas peristiwa apakah?",a:["Revolusi Pertanian","Perang Dingin sahaja","Revolusi Keagungan di England dan Revolusi Perancis","Perang Dunia Kedua sahaja"],k:2,e:"Kedaulatan moden berkembang seiring idea negara bangsa selepas Revolusi Keagungan di England dan Revolusi Perancis."},
+{c:"KEKALAN MODEN",q:"Apakah unsur penting yang digunakan dalam nasionalisme untuk membentuk negara bangsa?",a:["Persamaan rumpun bangsa dan bahasa","Persamaan hobi sahaja","Kekayaan individu semata-mata","Penguasaan satu syarikat"],k:0,e:"Nasionalisme menggunakan unsur persamaan rumpun bangsa dan bahasa untuk membentuk negara bangsa."},
+{c:"KEKALAN MODEN",q:"Pembentukan Persekutuan Tanah Melayu pada 1957 dan Malaysia pada 1963 berkait dengan konsep…",a:["Kedaulatan tradisional sahaja","Kedaulatan moden","Kedaulatan syarikat","Kedaulatan tanpa wilayah"],k:1,e:"Kedaulatan moden membantu menjelaskan pembentukan negara bangsa dan kemerdekaan negara."},
+{c:"KEDAULATAN UNDANG-UNDANG",q:"Apakah maksud kedaulatan undang-undang?",a:["Pemimpin boleh mengetepikan semua undang-undang","Hanya rakyat biasa perlu mematuhi undang-undang","Kerajaan dan rakyat tertakluk pada undang-undang yang perlu dipatuhi","Undang-undang hanya terpakai ketika darurat"],k:2,e:"Kedaulatan undang-undang bermaksud kerajaan dan rakyat tertakluk pada undang-undang yang perlu dipatuhi."},
+{c:"KEDAULATAN UNDANG-UNDANG",q:"Antara berikut, yang manakah kesan kedaulatan undang-undang?",a:["Menjamin keadilan dan mewujudkan negara aman serta makmur","Menghapuskan semua hak rakyat","Membolehkan hukuman dibuat tanpa proses","Menjadikan negara tiada peraturan"],k:0,e:"Kedaulatan undang-undang menjamin keadilan, kesaksamaan dan kestabilan negara."},
+{c:"KEDAULATAN UNDANG-UNDANG",q:"Kedaulatan undang-undang ialah prinsip keempat dalam…",a:["Rukun Negara","Wawasan syarikat","Piagam sekolah sahaja","Perjanjian perdagangan"],k:0,e:"Kedaulatan undang-undang merupakan prinsip keempat Rukun Negara."},
+{c:"KEDAULATAN ANTARABANGSA",q:"Apakah yang dimaksudkan dengan kedaulatan antarabangsa?",a:["Pengiktirafan sesebuah negara oleh negara lain","Keupayaan sebuah negeri mengawal cuaca","Kuasa sebuah syarikat ke atas semua negara","Kebebasan rakyat daripada semua undang-undang"],k:0,e:"Kedaulatan antarabangsa merujuk pengiktirafan Pertubuhan Bangsa-Bangsa Bersatu (PBB) terhadap negara yang tidak boleh dicabuli negara lain."},
+{c:"KEDAULATAN ANTARABANGSA",q:"Deklarasi Hubungan Persahabatan PBB 1970 menegaskan prinsip persamaan kedaulatan dari segi…",a:["Sukan dan hiburan","Undang-undang antarabangsa","Bahasa sahaja","Kadar cukai setiap negara"],k:1,e:"Deklarasi 1970 mengesahkan prinsip persamaan kedaulatan dari segi undang-undang antarabangsa."}
+];
+let idx=0,score=0,locked=false,soundOn=true,history=[];
+const $=id=>document.getElementById(id);
+function tone(ok){if(!soundOn)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const ctx=new C();const now=ctx.currentTime;const notes=ok?[660,880,1100]:[260,190];notes.forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.type=ok?"sine":"triangle";o.frequency.value=f;g.gain.setValueAtTime(.0001,now+i*.13);g.gain.exponentialRampToValueAtTime(.16,now+i*.13+.025);g.gain.exponentialRampToValueAtTime(.0001,now+i*.13+.18);o.connect(g);g.connect(ctx.destination);o.start(now+i*.13);o.stop(now+i*.13+.2)});setTimeout(()=>ctx.close(),800)}catch(e){}}
+function show(id){["start","quiz","results"].forEach(x=>$(x).classList.toggle("hide",x!==id))}
+$("soundToggle").onclick=()=>{soundOn=!soundOn;$("soundToggle").textContent=soundOn?"🔊 Bunyi: ON":"🔇 Bunyi: OFF";$("soundToggle").setAttribute("aria-pressed",String(soundOn));if(soundOn)tone(true)};
+$("startBtn").onclick=()=>{idx=0;score=0;history=[];$("review").classList.add("hide");$("certificate").classList.add("hide");$("certControls").classList.add("hide");show("quiz");render()};
+function render(){locked=false;const q=questions[idx];$("counter").textContent=`Soalan ${idx+1}/${questions.length}`;$("score").textContent=`⭐ ${score} mata`;$("bar").style.width=`${idx/questions.length*100}%`;$("category").textContent=q.c;$("question").textContent=q.q;$("feedback").className="feedback hide";$("nextBtn").classList.add("hide");$("hint").textContent="Pilih satu jawapan.";const box=$("answers");box.innerHTML="";q.a.forEach((a,i)=>{const b=document.createElement("button");b.className="answer";b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span>${a}</span>`;b.onclick=()=>answer(i,b);box.appendChild(b)})}
+function answer(choice,btn){if(locked)return;locked=true;const q=questions[idx],ok=choice===q.k;if(ok)score+=10;tone(ok);[...$("answers").children].forEach((b,i)=>{b.disabled=true;if(i===q.k)b.classList.add("correct");else if(i===choice)b.classList.add("wrong")});history.push({q:q.q,chosen:q.a[choice],correct:q.a[q.k],ok,e:q.e});$("score").textContent=`⭐ ${score} mata`;$("feedback").className="feedback "+(ok?"good":"bad");$("feedback").innerHTML=(ok?"✅ BETUL! +10 mata":"❌ BELUM TEPAT.")+`<div class="explain">${q.e}</div>`;$("hint").textContent=ok?"Teruskan momentum!":"Belajar daripada maklum balas dan cuba lagi."; $("nextBtn").textContent=idx===questions.length-1?"Lihat keputusan 🏆":"Soalan seterusnya ➜";$("nextBtn").classList.remove("hide");$("bar").style.width=`${(idx+1)/questions.length*100}%`}
+$("nextBtn").onclick=()=>{if(idx<questions.length-1){idx++;render()}else finish()};
+function finish(){show("results");const pct=score;let rank,msg,icon;if(pct===100){rank="MASTER KEDAULATAN";msg="Hebat! Semua jawapan tepat. Anda benar-benar menguasai konsep kedaulatan.";icon="👑"}else if(pct>=70){rank="EJEN SEJARAH CEMERLANG";msg="Syabas! Anda sudah menguasai banyak konsep. Semak jawapan untuk mengukuhkan pemahaman.";icon="🏆"}else if(pct>=40){rank="EJEN SEJARAH BERKEMBANG";msg="Usaha yang baik! Baca penerangan dan cuba lagi untuk meningkatkan skor.";icon="💪"}else{rank="PELATIH KEDAULATAN";msg="Jangan putus asa. Setiap cubaan membantu anda belajar. Cuba sekali lagi!";icon="🌱"}$("resultIcon").textContent=icon;$("resultTitle").textContent=pct===100?"Sempurna, Master Kedaulatan!":"Misi selesai, ejen sejarah!";$("finalScore").textContent=`${score}/100`;$("resultMessage").textContent=msg;$("certRank").textContent=rank;$("certScore").textContent=`${score}/100`;$("certName").textContent=$("studentName").value.trim()||"Ejen Sejarah";$("certDate").textContent=new Intl.DateTimeFormat("ms-MY",{day:"numeric",month:"long",year:"numeric"}).format(new Date());$("reviewList").innerHTML=history.map((h,i)=>`<div class="reviewitem"><b>${i+1}. ${h.q} ${h.ok?"✅":"❌"}</b><div class="ans">Jawapan anda: ${h.chosen}<br>Jawapan betul: <strong>${h.correct}</strong><br>${h.e}</div></div>`).join("")}
+$("certBtn").onclick=()=>{$("certificate").classList.remove("hide");$("certControls").classList.remove("hide");$("certificate").scrollIntoView({behavior:"smooth",block:"start"})};
+$("printBtn").onclick=()=>window.print();$("backBtn").onclick=()=>{ $("certificate").classList.add("hide");$("certControls").classList.add("hide");window.scrollTo({top:0,behavior:"smooth"})};
+$("reviewBtn").onclick=()=>{$("review").classList.toggle("hide");$("reviewBtn").textContent=$("review").classList.contains("hide")?"Semak jawapan":"Tutup semakan";if(!$("review").classList.contains("hide"))$("review").scrollIntoView({behavior:"smooth",block:"start"})};
+$("retryBtn").onclick=()=>{$("start").classList.remove("hide");$("results").classList.add("hide");$("certificate").classList.add("hide");window.scrollTo({top:0,behavior:"smooth"})};
+</script>
+</body></html>
